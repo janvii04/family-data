@@ -1,9 +1,11 @@
-const express=require("express")
-const app = express()
-require('./dbconnection').connectionDB();
-const port = 3000;
-app.listen(port,()=>  {
-    
-    console.log(`listening at port ${port}`)
-    
-    });
+ const express = require("express");
+const app = express();
+const port = 1234;
+require("./dbconnection").connectionDB();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});

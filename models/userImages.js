@@ -1,6 +1,6 @@
 module.exports = (Sequelize, sequelize, DataTypes) => {
     return sequelize.define(
-      "userImage",
+      "userImages",
       {
         ...require("./cors")(Sequelize, DataTypes),
         
@@ -8,16 +8,16 @@ module.exports = (Sequelize, sequelize, DataTypes) => {
         userId: {
           type: DataTypes.INTEGER,
           references: {
-            model: user,
+            model: "user",
             key: "id",
           },
           onUpdate: "CASCADE",
           onDelete:"CASCADE"
         },
         userImage: {
-          type: DataTypes.BLOB,
+          type: DataTypes.string,
           references: {
-            model: user,
+            model: "user",
             key: "id",
           },
           onUpdate: "CASCADE",
@@ -26,7 +26,7 @@ module.exports = (Sequelize, sequelize, DataTypes) => {
       },
   
       {
-        tableName: "userImage",
+        tableName: "userImages",
       }
     );
   };
