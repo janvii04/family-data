@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 1234
+const PORT = 3000
 const multer = require('multer')
 const path = require('path')
 
